@@ -21,22 +21,20 @@ const HomeScreen = () => {
           </p>
 
           <div className="two-btns">
-
             <a
-              href="https://r-education.netlify.app"
+              href="http://raghu-b2c-qadir-1.vercel.app"
               target="_blank"
               rel="noreferrer"
             >
               <button className="btn-1">Individual</button>
             </a>
             <a
-              href="https://experts-work.netlify.app"
+              href="https://b2-b-epert-works.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >
               <button className="btn-1">Business</button>
             </a>
-
           </div>
         </div>
         <div className="right">

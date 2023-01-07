@@ -2,11 +2,47 @@
 
 import React, { useState } from "react";
 import LOGO from "../Image/logo.png";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">Free Trial</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+          <a
+            href="https://b2-b-epert-works.vercel.app/trial"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <Button variant="outline-success">As B2B</Button>
+          </a>
+          <Button variant="outline-success">As B2C</Button>
+        </div>
+      </Modal.Body>
+      <Modal.Footer></Modal.Footer>
+    </Modal>
+  );
+}
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <>
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
       <div className="navBar">
         <div className="left">
           <img src={LOGO} alt="" />
@@ -15,15 +51,8 @@ const Navbar = () => {
           <ul>
             <li className="listHover">Home</li>
             <li className="listHover">Resources</li>
-            <li className="listHover">
-            <a
-                href={"https://experts-work.netlify.app/trial"}
-                target="_blank"
-                rel="noreferrer"
-                style={{color :'#fff' , textDecoration : 'none'}}
-              >
-                Login | <span style={{ color: "#f0ec0a" }}>Free Trial</span>
-              </a>
+            <li className="listHover" onClick={() => setModalShow(true)}>
+              Login | <span style={{ color: "#f0ec0a" }}>Free Trial</span>
             </li>
             <li className="specialList">
               <i className="fa-solid fa-magnifying-glass Search-icon"></i>
@@ -44,15 +73,8 @@ const Navbar = () => {
           <ul>
             <li>Home</li>
             <li>Resources</li>
-            <li>
-              <a
-                href={"https://experts-work.netlify.app/trial"}
-                target="_blank"
-                rel="noreferrer"
-                style={{color :'#fff' , textDecoration : 'none'}}
-              >
-                Login | <span style={{ color: "#f0ec0a" }}>Free Trial</span>
-              </a>
+            <li onClick={() => setModalShow(true)}>
+              Login | <span style={{ color: "#f0ec0a" }}>Free Trial</span>
             </li>
           </ul>
         </div>
@@ -61,15 +83,8 @@ const Navbar = () => {
           <ul>
             <li>Home</li>
             <li>Resources</li>
-            <li>
-              <a
-                href={"https://experts-work.netlify.app/trial"}
-                target="_blank"
-                rel="noreferrer"
-                style={{color :'#fff' , textDecoration : 'none'}}
-              >
-                Login | <span style={{ color: "#f0ec0a" }}>Free Trial</span>
-              </a>
+            <li onClick={() => setModalShow(true)}>
+              Login | <span style={{ color: "#f0ec0a" }}>Free Trial</span>
             </li>
           </ul>
         </div>
