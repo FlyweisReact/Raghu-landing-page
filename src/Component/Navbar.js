@@ -25,7 +25,13 @@ function MyVerticallyCenteredModal(props) {
           >
             <Button variant="outline-success">As B2B</Button>
           </a>
+          <a
+            href="https://raghu-b2c-qadir-1.vercel.app/trial"
+            target={"_blank"}
+            rel="noreferrer"
+          >
           <Button variant="outline-success">As B2C</Button>
+          </a>
         </div>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>
